@@ -1,0 +1,12 @@
+.DS_Store
+
+# For vim:
+*.swp
+
+# For dolphin
+.directory
+
+# For Kate
+*.kate-swp
+
+Runtime
