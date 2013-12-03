@@ -1,0 +1,54 @@
+<nav class="navbar navbar-inverse" role="navigation">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="/">首页</a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">相册 <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    <volist name="albums" id="voo" key="k">
+                        <li><a href="/album/{$voo.id}">{$voo.name}</a> </li>
+                    </volist>
+                </ul>
+            </li>
+        </ul>
+
+        <ul class="navbar-form navbar-right" role="search">
+            <a href="javascript:void(0);" class="btn_addPic btn btn-default">
+                <span>
+                    <span class="glyphicon glyphicon-cloud-upload"></span>上传照片
+                </span>
+                <input id="selectFiles" multiple="multiple" size="3" name="pic" class="filePrew" type="file">
+            </a>
+            </button>
+        </ul>
+    </div>
+    <!-- /.navbar-collapse -->
+</nav>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">照片</h4>
+            </div>
+            <div class="modal-body">
+                <div id="selectedPhotoes"></div>
+            </div>
+            <div class="modal-footer">
+                <button state="start" type="button" id="btn_upload" class="btn btn-primary">开始上传</button>
+            </div>
+        </div>
+    </div>
+</div>
