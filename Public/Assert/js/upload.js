@@ -126,7 +126,8 @@ $(function() {
                             console.log("uploading file:", f.name);
                             Q.Upload(f);
                         } else {
-                            $("#btn_upload").prop("disabled", false);
+                            $("#myModal").modal('hide');
+                             window.location.reload();
                         }
                     };
                     up();

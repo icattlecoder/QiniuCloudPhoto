@@ -1,5 +1,5 @@
 <?php
-require_once("../../php-sdk/qiniu/rs.php");
+require_once("php-sdk/qiniu/rs.php");
 
 // 本类由系统自动生成，仅供测试用途
 class SignAction extends Action {

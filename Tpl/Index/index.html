@@ -10,8 +10,8 @@
 
 <body>
     <include file="Index:topnav2" />
-   
-       <volist name="albums" id="vo">
+
+    <volist name="albums" id="vo">
         <div class="img-wrap">
             <a href="/album/{$vo.id}">
                 <img class="img-thumbnail" src="{:C('qiniu_domain')}/{$vo.cover}?imageView/1/w/300/h/200|watermark/2/text/{$vo.name|URLSafeBase64Encode}/font/5a6L5L2T/fontsize/500/fill/I0ZGRkZGRg==/dissolve/80/gravity/SouthEast" />
@@ -49,8 +49,11 @@
                 method: 'post',
                 url: "/album/newalbum",
                 data: $("#formNewAlbum").serialize(),
-            }).done(function() {
-                console.log("done");
+            }).done(function(o, ok) {
+                debugger;
+                if (ok == "success") {
+                    location.href = "/album/" + o;
+                }
             });
         })
     })

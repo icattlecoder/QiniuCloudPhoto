@@ -54,6 +54,7 @@ class AlbumAction extends Action {
         $data['name'] = $name;
         $data['description'] = $description;
         $data['uid'] = UID();
-        $albumDB->add($data);
+        $aid = $albumDB->add($data);
+        echo $aid;
     }
 }
